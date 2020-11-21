@@ -1,0 +1,28 @@
+<tr>
+    <td class="msg-icon">
+        <input type="checkbox" 
+        (change)="setRead($event.target.checked)">
+        <!-- <i class="fa fa-star msg-star" aria-hidden></i> -->
+    </td>
+    <td class="msg-descr">
+        <a [routerLink]="['/Pessoa', Mensagem.de.nome]">
+            {{Mensagem.de.nome}}
+        </a>
+    </td>
+    <td class="msg-descr">
+        <span class="msg-destaque">
+            {{Mensagem.conteudo}}
+        </span>        
+    </td>
+    <td class="msg-number">
+        {{Mensagem.quantidade}}
+    </td>
+    <td class="msg-descr">
+        <a [routerLink]="['/Necessidade', Mensagem.campanha.descricao]">
+            {{Mensagem.campanha.descricao}}
+        </a>
+    </td>
+    <td class="msg-number">
+        {{Mensagem.dia}}
+    </td>
+</tr>

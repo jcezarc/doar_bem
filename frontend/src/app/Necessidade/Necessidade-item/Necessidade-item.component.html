@@ -1,0 +1,36 @@
+<div class="card mt-4">
+    <div class="row">
+        <div class="col-4">    
+            
+            <img [src]="Necessidade.logotipo" 
+                class="image-item" height="96" 
+            >
+            
+        </div>
+        <div class="col-6">
+            <h4>
+                {{Necessidade.descricao}}
+            </h4>
+        </div>
+        <ng-content></ng-content>
+    </div>
+    <div class="row">
+
+        <div class="col-4 mx-1">
+            <span *ngIf="Necessidade.quantidade < 0" class="badge badge-danger">
+                Campanha: {{-Necessidade.quantidade}}
+            </span>
+            <span *ngIf="Necessidade.quantidade > 0" class="badge badge-success">
+                Doação: {{Necessidade.quantidade}}
+            </span>
+        </div>
+
+
+        <div class="col-6">
+            <span class="text-muted small">
+                {{Necessidade.pessoa.nome}}
+            </span>
+        </div>
+
+    </div>
+</div>

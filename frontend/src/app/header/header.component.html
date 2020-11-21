@@ -1,0 +1,20 @@
+<div class="navbar navbar navbar-light bg-ligh doe-header">
+
+    <a [routerLink]="['/']" class="navbar-brand">
+        <div class="row">
+            <img src="assets/img/logo.png" width="20%">
+            <h1> Doar Faz Bem</h1>
+        </div>
+    </a>
+
+    <ul class="nav nav-pills" [hidden]="noUser()">
+       <li class="nav-link"><a class="link-header" [routerLink]="['/Necessidade']">Campanha</a></li>
+       <li class="nav-link"><a class="link-header" [routerLink]="['/Pessoa']">Pessoa</a></li>
+       <!-- 
+           <li class="nav-link"><a class="link-header" [routerLink]="['/Doadores']">Doadores</a></li>
+        -->
+       
+    </ul>
+
+</div>
+

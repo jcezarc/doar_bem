@@ -1,0 +1,24 @@
+<div *ngIf="temMensagens" class="card">
+    <div class="card-header">
+        Mensagens
+    </div>
+    <table class="table" class="msg-color">
+        <tbody *ngFor="let Mensagem of items">
+            <app-Mensagem-item [Mensagem]="Mensagem">            
+            </app-Mensagem-item>
+        </tbody>
+    </table>
+    <div class="card-footer">
+            <div class="row ml-2">
+                <div class="alert alert-warning alert-dismissible fade msg-center show col-8">
+                    Você tem <strong>{{mensagemCount()}}</strong> mensagem(ns)!
+                </div >
+                <div class="col-4">
+                    <button (click)="update()" class="btn btn-info btn-success">
+                        Dar baixa nas doações
+                    </button>
+                </div>
+            </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+<app-Mensagem-list></app-Mensagem-list>
+
+<section>
+  <h1>
+    Campanhas
+  </h1>
+</section>
+
+  <app-search-bar
+    (filter)="NecessidadeList.filter($event)"
+    (add)="NecessidadeList.add()"
+  ></app-search-bar>
+
+  <app-Necessidade-list
+    #NecessidadeList
+  ></app-Necessidade-list>
+
+  

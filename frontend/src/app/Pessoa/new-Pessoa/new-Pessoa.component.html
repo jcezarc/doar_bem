@@ -1,0 +1,59 @@
+<div class="card mx-auto">
+	<div class="card-header">
+        Pessoa
+    </div>
+
+    <div class="card-body">
+        <form [formGroup]="PessoaForm" novalidate> 
+                <div class="form-row">
+                    <div class="col">
+                        <label>CPF/CNPJ:</label>
+                        <input formControlName="cpf_cnpj" type="text" class="form-control" maxlength="14">
+                    </div>
+                    <div class="col">
+                        <label>Nome:</label>
+                        <input formControlName="nome" type="text" class="form-control" placeholder="Nome">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Email:</label>
+                        <input formControlName="email" type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="col">
+                        <label>Senha:</label>
+                        <input formControlName="senha" type="password" class="form-control" placeholder="Senha">
+                    </div>
+                </div>
+
+                <app-zip-code 
+                [parentForm]="PessoaForm"
+                (send)=setAddress($event)>
+                </app-zip-code>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Endereço:</label>
+                        <input formControlName="endereco" type="text" class="form-control" readonly>
+                    </div>
+                </div>            
+                
+                <div class="form-row mt-4">
+                    <label>Foto:</label>
+                    <input formControlName="foto" type="text" class="form-control" placeholder="foto">
+                </div>
+            
+                <div class=" form-group">
+                    <button (click)="PessoaList.save(PessoaForm.value)" type="button"
+                    [disabled]="!PessoaForm.valid" class="btn btn-info btn-block">
+                    Enviar
+                    </button>
+                </div>
+
+        </form>
+    </div>
+
+</div>
+
+<app-Pessoa-list [hidden]="noUser()"
+#PessoaList
+></app-Pessoa-list>

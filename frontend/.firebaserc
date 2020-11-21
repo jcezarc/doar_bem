@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "quiz-figther": {
+      "hosting": {
+        "doar_bem": [
+          "quiz-figther"
+        ]
+      }
+    }
+  }
+}

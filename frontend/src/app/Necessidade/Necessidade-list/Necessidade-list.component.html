@@ -1,0 +1,24 @@
+<div class="row">
+
+  <div *ngFor="let Necessidade of Navigator.view(items)" class="col-sm-6 col-xs-12">
+    <app-Necessidade-item [Necessidade]="Necessidade">
+          <div *ngIf="isOwner(Necessidade)">
+              <app-delete-button (delete)="remove(Necessidade)">
+              </app-delete-button>            
+          </div>
+          <button *ngIf="canDonate(Necessidade)"
+          class="btn-Necessidade"
+          (click)="sendMessage(Necessidade)">
+              <i class="fa fa-commenting"
+              data-toggle="tooltip" title="Entra em contato para fazer doação"></i>
+          </button>
+</app-Necessidade-item>
+  </div>
+  <h4 *ngIf="!items" class="jumbotron ml-4">Nenhuma Campanha encontrada. :(</h4>
+  
+</div>
+
+<app-navigator 
+  [maxItems]="6"
+  #Navigator
+></app-navigator>
